@@ -8,7 +8,6 @@ function commitMessage() {
   var commitMsgFile = filename;
   if(!fileInfo('./.git').isDirectory()) {
     var unparsedText = "" + read('./.git');
-    console.log("ParsedText: " + unparsedText.substring('gitdir: '.length).trim());
     commitMsgFile = unparsedText.substring('gitdir: '.length).trim() + '/COMMIT_EDITMSG';
   }
 
