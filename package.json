@@ -1,14 +1,14 @@
 {
-  "name": "ggit",
+  "name": "@formhero/ggit-fork",
   "description": "Local promise-returning git command wrappers",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "bin": {
     "ggit": "./bin/ggit.js",
     "ggit-last": "./bin/ggit-last"
   },
   "bugs": {
-    "url": "https://github.com/bahmutov/ggit/issues"
+    "url": "https://github.com/ryan-kimber/ggit/issues"
   },
   "config": {
     "pre-git": {
@@ -90,7 +90,7 @@
   "preferGlobal": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/bahmutov/ggit.git"
+    "url": "https://github.com/ryan-kimber/ggit.git"
   },
   "scripts": {
     "build": "grunt && npm test",
