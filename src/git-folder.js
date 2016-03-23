@@ -1,16 +1,13 @@
 var path = require('path');
+var shell = require('shelljs');
 var exists = require('fs').existsSync;
 var fileInfo = require('fs').lstatSync;
 var read = require('fs').readFileSync;
 var filename = './.git';
 
-function getGitFolder(root) {
+function getGitFolder() {
 
-    if(!root) {
-        root = process.cwd();
-    }
-
-    var gitDirLocation = path.join(root, filename);
+    var gitDirLocation = path.join(shell.pwd(), filename);
     if (!exists(gitDirLocation)) {
         throw new Error('Cannot find file ' + gitDirLocation);
     }
@@ -18,7 +15,7 @@ function getGitFolder(root) {
     if(!fileInfo(gitDirLocation).isDirectory()) {
         var unparsedText = '' + read(gitDirLocation);
         gitDirLocation = unparsedText.substring('gitdir: '.length).trim();
-	gitDirLocation = path.join(root, gitDirLocation);
+	gitDirLocation = path.join(shell.pwd(), gitDirLocation);
     }
 
     if (!exists(gitDirLocation)) {

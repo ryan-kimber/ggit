@@ -1,7 +1,7 @@
 var Q = require('q');
 var exists = require('fs').existsSync;
 var read = require('fs').readFileSync;
-var filename = require('./git-folder')(process.cwd()) + '/COMMIT_EDITMSG';
+var filename = require('./git-folder')() + '/COMMIT_EDITMSG';
 
 function commitMessage() {
 

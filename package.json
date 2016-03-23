@@ -1,7 +1,7 @@
 {
   "name": "@formhero/ggit-fork",
   "description": "Local promise-returning git command wrappers",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "bin": {
     "ggit": "./bin/ggit.js",
@@ -40,7 +40,8 @@
     "optimist": "0.6.1",
     "q": "2.0.3",
     "quote": "0.4.0",
-    "ramda": "0.9.1"
+    "ramda": "0.9.1",
+    "shelljs": "^0.6.0"
   },
   "devDependencies": {
     "describe-it": "1.7.0",
