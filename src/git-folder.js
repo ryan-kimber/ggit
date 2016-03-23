@@ -6,16 +6,17 @@ var read = require('fs').readFileSync;
 var filename = './.git';
 
 function getGitFolder() {
+    console.log('Shell pwd: ' + shell.pwd());
 
     var gitDirLocation = path.join(shell.pwd(), filename);
-    if (!exists(gitDirLocation)) {
-        throw new Error('Cannot find file ' + gitDirLocation);
+    while(!exists(gitDirLocation))
+    {
+        gitDirLocation = path.join('..', gitDirLocation);
     }
 
     if(!fileInfo(gitDirLocation).isDirectory()) {
-        var unparsedText = '' + read(gitDirLocation);
-        gitDirLocation = unparsedText.substring('gitdir: '.length).trim();
-	gitDirLocation = path.join(shell.pwd(), gitDirLocation);
+        var text = '' + read(gitDirLocation);
+	    gitDirLocation = path.join(gitDirLocation + '/../', text.substring('gitdir: '.length).trim());
     }
 
     if (!exists(gitDirLocation)) {
