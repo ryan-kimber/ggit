@@ -1,7 +1,7 @@
 {
   "name": "@formhero/ggit-fork",
   "description": "Local promise-returning git command wrappers",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "bin": {
     "ggit": "./bin/ggit.js",
